@@ -13,10 +13,7 @@
   <tbody>
     <% @chemicals.each do |chemical| %>
       <tr>
-        <td><%= chemical.name %></td>
-        <td><%= link_to 'Show', chemical %></td>
-        <td><%= link_to 'Edit', edit_chemical_path(chemical) %></td>
-        <td><%= link_to 'Destroy', chemical, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to chemical.name, chemical %></td>
       </tr>
     <% end %>
   </tbody>

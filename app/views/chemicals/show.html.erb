@@ -2,7 +2,17 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @chemical.name %>
+  <h1><%= @chemical.name %></h1>
+  <p><%= @chemical.code  %></p>
+  <p><%= @chemical.category %></p>
+  <p><%= @chemical.official_name %></p>
+  <p><%= @chemical.ingredient %></p>
+  <p><%= @chemical.concentration %></p>
+  <p><%= @chemical.mixture_count %></p>
+  <p><%= @chemical.usefulness %></p>
+  <p><%= @chemical.use_category %></p>
+  <p><%= @chemical.registered_at %></p>
+  <p><%= @chemical.registered_end %></p>
 </p>
 
 <%= link_to 'Edit', edit_chemical_path(@chemical) %> |
