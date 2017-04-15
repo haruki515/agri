@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<%= page_entries_info @chemicals %>
 <h1>Chemicals</h1>
 
 <table>
@@ -22,3 +23,5 @@
 <br>
 
 <%= link_to 'New Chemical', new_chemical_path %>
+
+<%= paginate @chemicals %>
