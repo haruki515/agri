@@ -4,7 +4,7 @@ class ChemicalsController < ApplicationController
   # GET /chemicals
   # GET /chemicals.json
   def index
-    @chemicals = Chemical.all
+    @chemicals = Chemical.get_chemical_list
   end
 
   # GET /chemicals/1
