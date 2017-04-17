@@ -5,35 +5,26 @@
 ########################################################
 require 'pg'
 require 'yaml'
-#require '../build_util'
-#
-#include CreateDatabase
+require '../build_util'
 
-T = YAML.load_file('../tables/scheme.yml')
-db_conig = {
-  host:     '127.0.0.1',
-  user:     'agri',
-  password: '',
-  dbname:   'agri',
-  port:     '5432'
-}
-connection = PG.connect(db_conig)
-connection.internal_encoding = 'UTF-8'
-puts 'DBconnect'
-puts '--------------------------------'
-puts T["scheme"]
-query = "CREATE TABLE "
-query += T["scheme"][0]["name"] + "("
+include CreateDatabase
 
-a = T["scheme"][0]["cols"]
-ary = []
-a.each{|i|
-  ary.push(i["name"] + " " + i["type"])
-  #if i["notnull"] then
-  #  ary.push(i["name"] + " " + i["type"])
-  #end
-}
-query += ary.join(",")
-query += ")"
-#
-puts query # create table
+Class BuildDb
+  def initialize(siteData)
+    T = YAML.load_file('../tables/scheme.yml')
+    db_conig = {
+      host:     '127.0.0.1',
+      user:     'agri',
+      password: '',
+      dbname:   'agri',
+      port:     '5432'
+    }
+    @connection = PG.connect(db_conig)
+    connection.internal_encoding = 'UTF-8'
+    puts 'DBconnect'
+  end
+  def create_table
+  end
+  def import_data
+  end
+end
