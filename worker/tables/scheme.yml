@@ -1,5 +1,6 @@
 scheme:
-  - name: chemical
+  - table_name: chemical
+    file_name: chemical
     cols:
       - name: code
         type: integer
