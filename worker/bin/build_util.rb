@@ -6,12 +6,10 @@
 
 DATA_PATH = "../../data/"
 
+# TODO not null制約やpKeyの考慮
 module CreateDatabase
   def createTableStatement (table)
-    query = "CREATE TABLE "
-    query += table["table_name"]
-    query += "("
-    
+    query = "CREATE TABLE " + table["table_name"] + "("
     ary_column = []
     table["cols"].each{|i|
       ary_column.push(i["name"] + " " + i["type"])
@@ -24,10 +22,9 @@ module CreateDatabase
 
     # テーブル作成
     return query
-    connection.exec(query)
   end
 
-  def importData
+  def importData(csv_path, file_name)
     return "COPY chemical FROM '/home/vagrant/repos/agri/worker/data/chemicals.csv' WITH CSV"
   end
 end
