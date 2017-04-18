@@ -25,7 +25,7 @@ module CreateDatabase
   end
 
   def importData(csv_path, file_name)
-    return "COPY chemical FROM '/home/vagrant/repos/agri/worker/data/chemicals.csv' WITH CSV"
+    return "COPY chemical FROM '" + csv_path + file_name + "' WITH CSV"
   end
 end
 

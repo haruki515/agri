@@ -10,7 +10,7 @@ require './build_util'
 
 T = YAML.load_file('../tables/scheme.yml')
 DB_CONF = YAML.load_file('../conf.yml')
-CSV_PATH = "../../data/"
+CSV_PATH = "/data/csv/"
 
 # TODO ログを吐けるようにする
 class BuildDb
