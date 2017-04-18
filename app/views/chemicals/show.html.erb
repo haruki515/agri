@@ -3,16 +3,16 @@
 <p>
   <strong>Name:</strong>
   <h1><%= @chemical.name %></h1>
-  <p><%= @chemical.code  %></p>
-  <p><%= @chemical.category %></p>
-  <p><%= @chemical.official_name %></p>
-  <p><%= @chemical.ingredient %></p>
-  <p><%= @chemical.concentration %></p>
-  <p><%= @chemical.mixture_count %></p>
-  <p><%= @chemical.usefulness %></p>
-  <p><%= @chemical.use_category %></p>
-  <p><%= @chemical.registered_at %></p>
-  <p><%= @chemical.registered_end %></p>
+  <p>登録番号 : <%= @chemical.code  %></p>
+  <p>農薬の種類 : <%= @chemical.category %></p>
+  <p>正式名称 : <%= @chemical.official_name %></p>
+  <p>有効成分 : <%= @chemical.ingredient %></p>
+  <p>濃度 : <%= @chemical.concentration %></p>
+  <p>混合数 : <%= @chemical.mixture_count %></p>
+  <p>用途 : <%= @chemical.usefulness %></p>
+  <p>剤型名 : <%= @chemical.use_category %></p>
+  <p>登録年月日 : <%= @chemical.registered_at %></p>
+  <p>登録の有効期限 : <%= @chemical.registered_end %></p>
 </p>
 
 <%= link_to 'Edit', edit_chemical_path(@chemical) %> |
