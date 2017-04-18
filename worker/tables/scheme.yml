@@ -1,0 +1,31 @@
+scheme:
+  - table_name: chemical
+    file_name: chemical
+    cols:
+      - name: code
+        type: integer
+        notnull: true
+        primary: true
+      - name: category
+        type: varchar(100)
+      - name: name
+        type: varchar(100)
+        notnull: true
+      - name: official_name
+        type: varchar(100)
+      - name: ingredient
+        type: varchar(100)
+      - name: active_ingredient
+        type: varchar(100)
+      - name: concentration
+        type: varchar(100)
+      - name: mixture_count
+        type: integer
+      - name: usefulness
+        type: varchar(100)
+      - name: use_category
+        type: varchar(100)
+      - name: registered_at
+        type: varchar(100)
+      - name: registered_end
+        type: varchar(100)
