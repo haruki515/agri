@@ -9,7 +9,9 @@ require './build_util'
 
 
 T = YAML.load_file('../tables/scheme.yml')
-DB_CONF = YAML.load_file('../conf.yml')
+DB_CONF = YAML.load_file('../conf.yml')["database"]
+SEED_LIST = YAML.load_file('../conf.yml')["seed"]
+BUILD_LIST = YAML.load_file('../conf.yml')["build"]
 CSV_PATH = "/data/csv/"
 
 # TODO ログを吐けるようにする
@@ -22,7 +24,7 @@ class BuildDb
     puts "DB(" + db_config["dbname"] +") connected"
   end
 
-  def create_table(table)
+  def seed_table(table)
     puts "---------------" + "START " + table["table_name"] + "---------------"
     @connection.exec("DROP TABLE IF EXISTS " + table["table_name"])
 
@@ -42,4 +44,6 @@ end
 
 ## main TODO ループにする
 database = BuildDb.new
-database.create_table(T["scheme"][0])
+for target in SEED_LIST do
+  database.seed_table(T["schema"][target])
+end
