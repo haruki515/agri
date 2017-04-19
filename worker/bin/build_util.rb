@@ -24,8 +24,8 @@ module CreateDatabase
     return query
   end
 
-  def importData(csv_path, file_name)
-    return "COPY chemicals FROM '" + csv_path + file_name + "' WITH CSV"
+  def importData(csv_path, file_name, header)
+    return "COPY chemicals FROM '" + csv_path + file_name + "' WITH CSV " + header
   end
 end
 
