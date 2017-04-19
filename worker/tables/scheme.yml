@@ -1,5 +1,5 @@
 scheme:
-  - table_name: chemical
+  - table_name: chemicals
     file_name: chemicals.csv
     cols:
       - name: code
