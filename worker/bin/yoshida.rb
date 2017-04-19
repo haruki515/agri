@@ -34,7 +34,7 @@ class BuildDb
 
     # import data
     puts "Import data to " + table["file_name"]
-    @connection.exec(importData(CSV_PATH, table["file_name"]))
+    @connection.exec(importData(CSV_PATH, table["file_name"], table["header"]))
     puts "...Done."
     puts "---------------" + "END " + table["table_name"] + "---------------"
   end
