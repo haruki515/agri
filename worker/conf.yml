@@ -5,8 +5,6 @@ database:
   dbname: 'agri'
   port: '5432'
 seed:
-  - chemical
-  - chemical2
+  - chemicals
 build:
-  - _chemical_master
-  - _chemical2_master
+  - _master_chemical
