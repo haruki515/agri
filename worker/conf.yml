@@ -1,5 +1,10 @@
-host: '127.0.0.1'
-user: 'agri'
-password: ''
-dbname: 'agri'
-port: '5432'
+database:
+  host: '127.0.0.1'
+  user: 'agri'
+  password: ''
+  dbname: 'agri'
+  port: '5432'
+seed:
+  - chemicals
+build:
+  - _master_chemical

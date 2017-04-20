@@ -1,5 +1,6 @@
-scheme:
-  - table_name: chemicals
+schema:
+  chemicals:
+    table_name: chemicals
     file_name: chemicals.csv
     header: header 
     cols:

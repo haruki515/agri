@@ -27,6 +27,22 @@ module CreateDatabase
   def importData(csv_path, file_name, header)
     return "COPY chemicals FROM '" + csv_path + file_name + "' WITH CSV " + header
   end
+
+  def getSql(file_path)
+    begin
+      File.open(file_path + ".sql") do |file|
+        ret = []
+        file.read.split("\n").each do |labmen|
+           ret.push(labmen)
+        end
+        return ret.join(" ")
+      end
+    rescue SystemCallError => e
+      puts %Q(class=[#{e.class}] message=[#{e.message}])
+    rescue IOError => e
+      puts %Q(class=[#{e.class}] message=[#{e.message}])
+    end
+  end
 end
 
 
