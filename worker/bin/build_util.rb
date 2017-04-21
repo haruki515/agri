@@ -25,7 +25,7 @@ module CreateDatabase
   end
 
   def importData(csv_path, file_name, header)
-    return "COPY chemicals FROM '" + csv_path + file_name + "' WITH CSV " + header
+    return "COPY master_chemical FROM '" + csv_path + file_name + "' WITH CSV " + header
   end
 
   def getSql(file_path)
