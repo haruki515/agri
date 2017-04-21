@@ -1,7 +1,7 @@
 schema:
-  master_chemical:
-    table_name: master_chemical
-    file_name: master_chemical.csv
+  chemical_master:
+    table_name: chemical_master
+    file_name: chemical_master.csv
     header: header 
     cols:
       - name: code

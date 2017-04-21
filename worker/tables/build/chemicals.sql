@@ -5,5 +5,5 @@ select
   row_number() over (order by code) as id
   ,*
 from
-  master_chemical
+  chemical_master
 ;
