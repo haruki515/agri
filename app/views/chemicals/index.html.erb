@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 <div class="section no-pad-bot" id="index-banner">
-  <div class="container">
   <h1 class="header center orange-text">農薬データ一覧</h1>
+  <%= paginate @chemicals %>
+  <div class="container">
   <%= page_entries_info @chemicals %>
   <% @chemicals.each do |chemical| %>
     <div class="card-panel">
@@ -11,7 +12,5 @@
   </div>
 </div>
 <br>
-
 <%# link_to 'New Chemical', new_chemical_path %>
-
 <%= paginate @chemicals %>
