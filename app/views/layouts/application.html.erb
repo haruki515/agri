@@ -13,7 +13,8 @@
 
 <body>
   <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Botteams</a>
+    <div class="nav-wrapper container">
+      <%= link_to "Botteams", "/", { :class => "brand-logo", :id => "logo-container" }  %>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">サービス</a></li>
         <li><a href="#">チーム</a></li>
@@ -55,7 +56,15 @@
   </footer>
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+  <script>
+    function go(){
+      //EnterキーならSubmit
+      //if(window.event.keyCode==13)document.formname.submit();
+      if(window.event.keyCode==13){
+        var query = $("#autocomplete-input").val()
+        location.href = "/chemicals?q=" + query;
+      }
+    }
+  </script>
   </body>
 </html>
