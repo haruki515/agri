@@ -6,5 +6,8 @@ database:
   port: '5432'
 seed:
   - chemical_master
+  - chemical_information_master
 build:
   - chemicals
+  - crops
+  - insects

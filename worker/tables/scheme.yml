@@ -31,3 +31,62 @@ schema:
         type: varchar(100)
       - name: registered_end
         type: varchar(100)
+  chemical_information_master:
+    table_name: chemical_information_master
+    file_name: chemical_information_master.csv
+    header: header
+    cols:
+      - name: code
+        type: integer
+        notnull: true
+        primary: true
+      - name: usefulness
+        type: varchar(100)
+      - name: category
+        type: varchar(100)
+      - name: name
+        type: varchar(100)
+        notnull: true
+      - name: short_name
+        type: varchar(100)
+      - name: crops
+        type: varchar(200)
+      - name: use_site
+        type: varchar(100)
+      - name: insects
+        type: varchar(100)
+      - name: usage
+        type: varchar(100)
+      - name: dilution
+        type: varchar(200)
+      - name: liquid_measure
+        type: varchar(200)
+      - name: use_at
+        type: varchar(100)
+      - name: frequency
+        type: varchar(100)
+      - name: direction
+        type: varchar(400)
+      - name: fumigation_time
+        type: varchar(100)
+      - name: fumigation_temp
+        type: varchar(100)
+      - name: apply_soil
+        type: varchar(100)
+      - name: apply_zone
+        type: varchar(100)
+      - name: apply_chemical
+        type: varchar(200)
+      - name: mixture_count
+        type: varchar(100)
+      - name: total_usage1
+        type: varchar(200) 
+      - name: total_usage2
+        type: varchar(100)
+      - name: total_usage3
+        type: varchar(100)
+      - name: total_usage4
+        type: varchar(100)
+      - name: total_usage5
+        type: varchar(100)
+

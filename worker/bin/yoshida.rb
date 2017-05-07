@@ -1,4 +1,4 @@
-########################################################
+#######################################################
 # Name:Build DB
 # Auther:agri
 # Date:2017/4/15
@@ -34,8 +34,8 @@ class BuildDb
     @connection.exec(query)
 
     # import data
-    puts importData(CSV_PATH, table["file_name"], table["header"])
-    @connection.exec(importData(CSV_PATH, table["file_name"], table["header"]))
+    puts importData(CSV_PATH, table["file_name"], table["table_name"], table["header"])
+    @connection.exec(importData(CSV_PATH, table["file_name"], table["table_name"], table["header"]))
     puts "END " + table["table_name"]
   end
 
