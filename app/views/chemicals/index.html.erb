@@ -1,12 +1,23 @@
 <p id="notice"><%= notice %></p>
 <div class="section no-pad-bot" id="index-banner">
   <h1 class="header center orange-text">農薬データ一覧</h1>
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">search</i>
+          <input type="text" id="autocomplete-input" class="autocomplete" onkeydown="go();">
+          <label for="autocomplete-input">農薬名</label>
+        </div>
+      </div>
+    </div>
+  </div>
   <%= paginate @chemicals %>
   <div class="container">
   <%= page_entries_info @chemicals %>
   <% @chemicals.each do |chemical| %>
     <div class="card-panel">
-      <span class="blue-text text-darken-2"><%= chemical.name %></span>
+      <span class="blue-text text-darken-2"><%= link_to chemical.name, chemical %></span>
     </div>
   <% end %>
   </div>
