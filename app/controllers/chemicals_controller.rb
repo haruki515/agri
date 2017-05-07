@@ -4,7 +4,10 @@ class ChemicalsController < ApplicationController
   # GET /chemicals
   # GET /chemicals.json
   def index
-    @chemicals = Chemical.page(params[:page])
+    @query = params[:q] || ""
+    # TODO validate, sanitize
+    @chemicals = Chemical.page(params[:page]).where("name like '%" + @query + "%'")
+    #@chemicals = Chemical.page(params[:page])
   end
 
   # GET /chemicals/1
