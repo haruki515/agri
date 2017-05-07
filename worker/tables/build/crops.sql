@@ -1,11 +1,10 @@
 drop table if exists crops;
-drop sequence if exists crops_seq;
 
-create sequence crops_seq;
 create table crops as
-  id bigint primary key default nextval('crops_seq'),
-select distinct on (crops)
+select 
+  row_number() over (order by crops) as id,
   crops 
 from
   chemical_information_master
+  group by crops
 ;
